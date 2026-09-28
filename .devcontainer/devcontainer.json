@@ -1,0 +1,19 @@
+{
+  "name": "Minimal Ubuntu with Docker",
+  "image": "ubuntu:24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "runArgs": [
+    "--privileged"
+  ],
+  "remoteUser": "root",
+  "customizations": {
+    "codespaces": {
+      "openFiles": []
+    },
+    "vscode": {
+      "extensions": []
+    }
+  }
+}
