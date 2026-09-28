@@ -1,13 +1,19 @@
 {
   "name": "Minimal Ubuntu with Docker",
   "image": "ubuntu:24.04",
+
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
+
   "runArgs": [
     "--privileged"
   ],
+
   "remoteUser": "root",
+
+  "postCreateCommand": "apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openssh-client openssh-server sudo nano curl wget zip unzip git ca-certificates gnupg less procps iproute2 iputils-ping dnsutils net-tools rsync jq tree file && apt-get clean && rm -rf /var/lib/apt/lists/*",
+
   "customizations": {
     "codespaces": {
       "openFiles": []
